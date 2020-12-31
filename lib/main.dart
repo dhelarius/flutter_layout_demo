@@ -43,16 +43,48 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          _builColumnButton(color, Icons.call, 'CALL'),
+          _builColumnButton(color, Icons.near_me, 'ROUTE'),
+          _builColumnButton(color, Icons.share, 'SHARE'),
+        ],
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
         appBar: AppBar(
           title: Text('Flutter layout demo'),
         ),
-        body: Center(
-          child: titleSection,
-        ),
+        body: Column(children: [titleSection, buttonSection]),
       ),
     );
   }
+}
+
+Column _builColumnButton(Color color, IconData icon, String label) {
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Icon(icon, color: color),
+      Container(
+        margin: const EdgeInsets.only(top: 8),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: color,
+          ),
+        ),
+      ),
+    ],
+  );
 }
