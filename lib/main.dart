@@ -34,11 +34,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
-          Text('41'),
+          FavoriteWidget(),
         ],
       ),
     );
@@ -84,7 +80,7 @@ class MyApp extends StatelessWidget {
           ),
           titleSection,
           buttonSection,
-          textSection
+          textSection,
         ]),
       ),
     );
