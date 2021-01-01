@@ -111,3 +111,15 @@ Column _builColumnButton(Color color, IconData icon, String label) {
     ],
   );
 }
+
+class FavoriteWidget extends StatefulWidget {
+  @override
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+}
+
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
